@@ -7,9 +7,22 @@ import listIcon from './assets/list.png'
 
 function App() {
   const pairs = ['BTC/IDR', 'ETH/IDR', 'BNB/IDR', 'DOGE/IDR', 'ADA/IDR'];
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
     <div className="app">
+      <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+  <div className="line"></div>
+  <div className="line"></div>
+  <div className="line"></div>
+</div>
+
+<div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+  <span className="nav-link">Pasar</span>
+  <span className="nav-link">Tentang Kami</span>
+  <span className="nav-link">Kontak Kami</span>
+</div>
+
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-left">
@@ -101,6 +114,8 @@ function App() {
               <div className="market-cap">Rp 31,953,908T</div>
               <div className="volume">1.53BM</div>
             </div>
+
+        
           ))}
         </div>
       </div>
